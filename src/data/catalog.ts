@@ -1,29 +1,7 @@
 // src/data/catalog.ts — Katalog dostępnych komponentów PC
-import type { GPUItem, MotherboardItem } from '@/types/pc';
+import type { CPUItem, CoolerItem, GPUItem, MotherboardItem, RAMItem } from '@/types/pc';
 
-export const GPU_CATALOG: GPUItem[] = [
-  {
-    id: 'rtx-4070-dual',
-    name: 'RTX 4070 Dual Fan',
-    price: 2800,
-    color: '#2d2d3f',
-    dimensions: [1.2, 0.3, 0.5],
-    length_mm: 300,
-    tdp: 200,
-    fan_count: 2,
-  },
-  {
-    id: 'rtx-4080-triple',
-    name: 'RTX 4080 Triple Fan',
-    price: 4500,
-    color: '#1e1e30',
-    dimensions: [1.5, 0.35, 0.55],
-    length_mm: 340,
-    tdp: 320,
-    fan_count: 3,
-  },
-];
-
+// ── Płyty główne ────────────────────────────────────────────────────
 export const MOTHERBOARD_CATALOG: MotherboardItem[] = [
   {
     id: 'b650-atx',
@@ -34,5 +12,212 @@ export const MOTHERBOARD_CATALOG: MotherboardItem[] = [
     form_factor: 'ATX',
     socket: 'AM5',
     ram_type: 'DDR5',
+    tdp: 15,
+    affiliateUrl: 'https://sklep.pl/b650-atx-gaming?ref=pcbuilder',
+  },
+  {
+    id: 'z790-atx',
+    name: 'Z790 ATX Elite',
+    price: 1150,
+    color: '#1a1a2e',
+    dimensions: [1.6, 1.8, 0.08],
+    form_factor: 'ATX',
+    socket: 'LGA1700',
+    ram_type: 'DDR5',
+    tdp: 18,
+    affiliateUrl: 'https://sklep.pl/z790-atx-elite?ref=pcbuilder',
+  },
+  {
+    id: 'b550-matx',
+    name: 'B550M mATX',
+    price: 490,
+    color: '#1a1a2e',
+    dimensions: [1.3, 1.3, 0.08],
+    form_factor: 'mATX',
+    socket: 'AM4',
+    ram_type: 'DDR4',
+    tdp: 12,
+    affiliateUrl: 'https://sklep.pl/b550m-matx?ref=pcbuilder',
   },
 ];
+
+// ── Procesory ───────────────────────────────────────────────────────
+export const CPU_CATALOG: CPUItem[] = [
+  {
+    id: 'r7-7800x3d',
+    name: 'Ryzen 7 7800X3D',
+    price: 1550,
+    color: '#555',
+    dimensions: [0.3, 0.04, 0.3],
+    socket: 'AM5',
+    tdp: 120,
+    cores: 8,
+    clock_ghz: 4.2,
+    affiliateUrl: 'https://sklep.pl/ryzen-7-7800x3d?ref=pcbuilder',
+  },
+  {
+    id: 'r5-5600x',
+    name: 'Ryzen 5 5600X',
+    price: 650,
+    color: '#555',
+    dimensions: [0.28, 0.04, 0.28],
+    socket: 'AM4',
+    tdp: 65,
+    cores: 6,
+    clock_ghz: 3.7,
+    affiliateUrl: 'https://sklep.pl/ryzen-5-5600x?ref=pcbuilder',
+  },
+  {
+    id: 'i7-14700k',
+    name: 'Core i7-14700K',
+    price: 1700,
+    color: '#666',
+    dimensions: [0.3, 0.04, 0.3],
+    socket: 'LGA1700',
+    tdp: 125,
+    cores: 20,
+    clock_ghz: 3.4,
+    affiliateUrl: 'https://sklep.pl/core-i7-14700k?ref=pcbuilder',
+  },
+];
+
+// ── Karty graficzne ─────────────────────────────────────────────────
+export const GPU_CATALOG: GPUItem[] = [
+  {
+    id: 'rtx-4070-dual',
+    name: 'RTX 4070 Dual Fan',
+    price: 2800,
+    color: '#2d2d3f',
+    dimensions: [1.2, 0.3, 0.5],
+    length_mm: 300,
+    tdp: 200,
+    fan_count: 2,
+    affiliateUrl: 'https://sklep.pl/rtx-4070-dual?ref=pcbuilder',
+  },
+  {
+    id: 'rtx-4080-triple',
+    name: 'RTX 4080 Triple Fan',
+    price: 4500,
+    color: '#1e1e30',
+    dimensions: [1.5, 0.35, 0.55],
+    length_mm: 340,
+    tdp: 320,
+    fan_count: 3,
+    affiliateUrl: 'https://sklep.pl/rtx-4080-triple?ref=pcbuilder',
+  },
+];
+
+// ── Pamięć RAM ──────────────────────────────────────────────────────
+export const RAM_CATALOG: RAMItem[] = [
+  {
+    id: 'ddr5-32-6000-2x',
+    name: '32GB DDR5 6000MHz (2×16)',
+    price: 520,
+    color: '#2a2a3a',
+    dimensions: [0.04, 0.45, 0.008],
+    type: 'DDR5',
+    capacity_gb: 32,
+    speed_mhz: 6000,
+    sticks: 2,
+    affiliateUrl: 'https://sklep.pl/ddr5-32gb-6000?ref=pcbuilder',
+  },
+  {
+    id: 'ddr5-64-5600-4x',
+    name: '64GB DDR5 5600MHz (4×16)',
+    price: 980,
+    color: '#2a2a3a',
+    dimensions: [0.04, 0.45, 0.008],
+    type: 'DDR5',
+    capacity_gb: 64,
+    speed_mhz: 5600,
+    sticks: 4,
+    affiliateUrl: 'https://sklep.pl/ddr5-64gb-5600?ref=pcbuilder',
+  },
+  {
+    id: 'ddr4-32-3600-2x',
+    name: '32GB DDR4 3600MHz (2×16)',
+    price: 350,
+    color: '#2a2a3a',
+    dimensions: [0.04, 0.45, 0.008],
+    type: 'DDR4',
+    capacity_gb: 32,
+    speed_mhz: 3600,
+    sticks: 2,
+    affiliateUrl: 'https://sklep.pl/ddr4-32gb-3600?ref=pcbuilder',
+  },
+  {
+    id: 'ddr4-16-3200-2x',
+    name: '16GB DDR4 3200MHz (2×8)',
+    price: 210,
+    color: '#2a2a3a',
+    dimensions: [0.04, 0.45, 0.008],
+    type: 'DDR4',
+    capacity_gb: 16,
+    speed_mhz: 3200,
+    sticks: 2,
+    affiliateUrl: 'https://sklep.pl/ddr4-16gb-3200?ref=pcbuilder',
+  },
+];
+
+// ── Chłodzenie CPU ──────────────────────────────────────────────────
+export const COOLER_CATALOG: CoolerItem[] = [
+  {
+    id: 'air-tower-basic',
+    name: 'Wieża chłodząca 120mm',
+    price: 180,
+    color: '#333',
+    dimensions: [0.4, 0.65, 0.35],
+    type: 'air',
+    height_mm: 155,
+    tdp: 8,
+    fan_count: 1,
+    affiliateUrl: 'https://sklep.pl/wieza-120mm?ref=pcbuilder',
+  },
+  {
+    id: 'air-tower-dual',
+    name: 'Wieża chłodząca 2×140mm',
+    price: 350,
+    color: '#2a2a3a',
+    dimensions: [0.5, 0.7, 0.4],
+    type: 'air',
+    height_mm: 168,
+    tdp: 12,
+    fan_count: 2,
+    affiliateUrl: 'https://sklep.pl/wieza-dual-140mm?ref=pcbuilder',
+  },
+  {
+    id: 'aio-240',
+    name: 'AIO 240mm Liquid',
+    price: 480,
+    color: '#1a1a2e',
+    dimensions: [0.3, 0.08, 0.3],
+    type: 'aio',
+    height_mm: 55,
+    tdp: 15,
+    fan_count: 2,
+    affiliateUrl: 'https://sklep.pl/aio-240mm?ref=pcbuilder',
+  },
+  {
+    id: 'aio-360',
+    name: 'AIO 360mm Liquid',
+    price: 650,
+    color: '#111',
+    dimensions: [0.3, 0.08, 0.3],
+    type: 'aio',
+    height_mm: 55,
+    tdp: 20,
+    fan_count: 3,
+    affiliateUrl: 'https://sklep.pl/aio-360mm?ref=pcbuilder',
+  },
+];
+
+// ── Predefiniowane kolory RGB ───────────────────────────────────────
+export const RGB_PRESETS = [
+  { name: 'Indygo', hex: '#6366f1' },
+  { name: 'Czerwony', hex: '#ef4444' },
+  { name: 'Niebieski', hex: '#3b82f6' },
+  { name: 'Zielony', hex: '#22c55e' },
+  { name: 'Pomarańcz', hex: '#f97316' },
+  { name: 'Fiolet', hex: '#a855f7' },
+  { name: 'Biały', hex: '#ffffff' },
+] as const;
